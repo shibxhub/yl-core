@@ -8,3 +8,4 @@
 2. npm run dev
 
 (初始化仓库用的 README)
+shibx
