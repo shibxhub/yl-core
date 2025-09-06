@@ -1,8 +1,19 @@
 {
-  "name": "Vue 3 + TypeScript + pnpm Development",
+  "name": "yl-core-dev",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
+  },
+  "containerEnv": {
+    "http_proxy": "http://host.docker.internal:7890",
+    "https_proxy": "http://host.docker.internal:7890",
+    "HTTP_PROXY": "http://host.docker.internal:7890",
+    "HTTPS_PROXY": "http://host.docker.internal:7890",
+    "no_proxy": "localhost,127.0.0.1,.local,.internal,docker,docker.io"
+  },
+  "remoteEnv": {
+    "http_proxy": "http://host.docker.internal:7890",
+    "https_proxy": "http://host.docker.internal:7890"
   },
   "customizations": {
     "vscode": {
@@ -12,8 +23,14 @@
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
         "ms-vscode.vscode-typescript-next",
-        "dbaeumer.vscode-eslint"
-      ]
+        "dbaeumer.vscode-eslint",
+        "GitHub.copilot",
+        "GitHub.vscode-pull-request-github"
+      ],
+      "settings": {
+        "http.proxy": "http://host.docker.internal:7890",
+        "http.proxyStrictSSL": false
+      }
     }
   },
   "postCreateCommand": "cd /workspace && pnpm install",

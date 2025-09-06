@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173,
+    port: 3000,
     host: '0.0.0.0',
     strictPort: true,
 	// 👇 关键：启用轮询
@@ -14,7 +14,7 @@ export default defineConfig({
     }
   },
   preview: {
-    port: 5173,
+    port: 3000,
     host: '0.0.0.0',
   },
   resolve: {
